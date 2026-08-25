@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MakersBnB</title>
+</head>
+<body>
+<h1>Welcome to MakersBnB</h1>
+<!-- th:text is a Thymeleaf attribute used to generate the actual `h3` text -->
+<!-- within it, we use nSpaces which was passed in from the controller -->
+<h3 th:text="${nSpaces} + ' spaces are waiting to be discovered'"></h3>
+<h4>Recent reviews</h4>
+<ul>
+    <!-- using th:each we tell Thymeleaf to render an li for each review -->
+    <li th:each="review : ${reviews}" th:text="${review}"></li>
+</ul>
+<h3 th:text="${bookings} + ' bookings were made last week'"></h3>
+</body>
+</html>

@@ -41,6 +41,9 @@ class LandingPageTest {
         Locator pageBody = page.locator("body");
         //we assert that the body should contain "Welcome to MakersBnB!":
         assertThat(pageBody).containsText("Welcome to MakersBnB");
+        assertThat(pageBody).containsText("spaces are waiting to be discovered");
+        assertThat(pageBody).containsText("bookings were made last week");
+
     }
 
     @Test
