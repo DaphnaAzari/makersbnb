@@ -10,7 +10,10 @@ class LandingPageTest {
     static Browser browser;
     BrowserContext context;
     Page page;
-
+//Methods with a @BeforeAll annotation are run once, at the
+// start of the test run. In this case,
+// we're instantiating Playwright and
+// launching a Chromium browser (of chome broser).
     @BeforeAll
     static void launchBrowser() {
         playwright = Playwright.create();
@@ -21,6 +24,11 @@ class LandingPageTest {
     static void closeBrowser() {
         playwright.close();
     }
+//before each is used when we want the test to do the same set of things before
+    //each of the tests so that we do not have to repeat the steps top the starting
+   //point. @BeforeEach or @AfterEach are run before/after every individual test.
+    // In this case, we're creating a new browser context for each test, and then creating a
+    //new page (tab) which we can reference within the tests.
 
     @BeforeEach
     void createContextAndPage() {

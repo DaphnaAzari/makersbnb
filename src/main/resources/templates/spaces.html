@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>All Spaces</title>
+</head>
+<body>
+
+
+
+<h1>All Spaces</h1>
+<p th:text="${nSpaces} + ' spaces available:'"></p>
+<ul>
+    <!--  this is a loop for each item in spaces list that was
+    passed by my controller, call it space and repeat it for every item: -->
+    <li th:each="space : ${spaces}">
+        <b><span th:text="${space.name} +':'"></span></b>
+        <span th:text="${space.description}"></span> —
+        £<span th:text="${space.price}"></span>
+        <span th:text="${space.rules}"></span>
+    </li>
+</ul>
+</body>
+</html>

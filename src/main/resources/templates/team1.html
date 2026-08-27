@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Team1</title>
+
+</head>
+<body>
+<h1>Staff:</h1>
+<ul>
+
+    <li th:each="member:${staff1}"
+        th:text="${member.name + '-' + member.role}">
+
+    </li>
+
+
+</body>
+</html>
